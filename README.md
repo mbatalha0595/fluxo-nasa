@@ -40,10 +40,10 @@ Envio automático de e-mail com a imagem e armazenamento na biblioteca do ShareP
 
 Em caso de erro no escopo Try, esse escopo é executado, enviando um e-mail de notificação automaticamente.
 
-<img src="https://raw.githubusercontent.com/mbatalha0595/fluxo-nasa/main/images/3.png" width=700>
+<img src="https://raw.githubusercontent.com/mbatalha0595/fluxo-nasa/main/images/4.png" width=700>
 
 ### 5) E-mail com Imagem
 
 Este é o e-mail enviado com a imagem baixada da NASA via API REST.
 
-<img src="https://raw.githubusercontent.com/mbatalha0595/fluxo-nasa/main/images/3.png" width=700>
+<img src="https://raw.githubusercontent.com/mbatalha0595/fluxo-nasa/main/images/5.png" width=700>
