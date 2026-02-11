@@ -1,4 +1,4 @@
-# NASA APOD - Fluxo de Extração de Dados (API REST)
+# NASA - Fluxo de Extração de Dados (API REST)
 
 ## Objetivo
 Consumir a API da NASA para obter a imagem astronômica do dia, processar a resposta JSON, enviar a imagem por e-mail e armazená-la em uma biblioteca do SharePoint.
