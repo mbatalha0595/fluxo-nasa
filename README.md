@@ -1,21 +1,37 @@
-# Fluxo de Extração de Imagens da NASA via API REST
+# NASA APOD - Fluxo de Extração de Dados (API REST)
 
 ## Objetivo
-Este fluxo tem como objetivo extrair imagens de satélites da NASA via API REST, onde cada imagem é salva no SharePoint e enviada por e-mail.
+Consumir a API da NASA para obter a imagem astronômica do dia, processar a resposta JSON, enviar a imagem por e-mail e armazená-la em uma biblioteca do SharePoint.
 
 ## Fluxo
-Este fluxo é disparado manualmente pelo usuário. Na variável "Chave", armazeno a chave da API da NASA. Em seguida, a data de execução do fluxo é armazenada na variável "Data".
+
+<img src="https://raw.githubusercontent.com/mbatalha0595/fluxo-nasa/main/images/fluxo.png">
+
+## Lógica de Execução
+
+1) Disparo e Inicialização
+
+Este fluxo é acionado manualmente.
+
+Em seguida, duas variáveis são inicializadas:
+
+- Chave (API Key)
+- Data (data de disparo da trigger)
 
 <img src="https://raw.githubusercontent.com/mbatalha0595/fluxo-nasa/main/images/1.png">
 
-Para capturar qualquer problema na execução do fluxo, simulei a estrutura try catch usando Escopos. No escopo "Try", uso a etapa HTTP para passar a data e chave para a API da NASA. Em seguida, capturo o JSON retornado e uso a etapa de HTTP novamente para acessar a imagem via URL. Depois, disparo um e-mail com a imagem e gravo a imagem em uma biblioteca do SharePoint.
+2) Consumo da API
+
+No escopo Try, é realizada uma requisição HTTP (GET) para a API da NASA passando o valor das variáveis Chave e Data.
+
+Nota: Para tratamento de erros, simulei a estrutura Try-Catch usando escopo com run-after. Se houver algum erro, um e-mail de notificação é enviado automaticamente.
+
+Em seguida, a resposta JSON é processada para extrair a URL da imagem, seguida de uma segunda requisição HTTP para baixar a imagem (binário).
 
 <img src="https://raw.githubusercontent.com/mbatalha0595/fluxo-nasa/main/images/2.png">
 
-Se houver algum erro no escopo "Try", o escopo "Catch" é executado e um e-mail é disparado informando que houve erro na requisição de dados.
+3) Envio de E-mail e Gravação no SharePoint
+
+Envio automático de e-mail com a imagem e armazenamento na biblioteca do SharePoint.
 
 <img src="https://raw.githubusercontent.com/mbatalha0595/fluxo-nasa/main/images/3.png">
-
-Este é o e-mail disparado pelo fluxo:
-
-<img src="https://raw.githubusercontent.com/mbatalha0595/fluxo-nasa/main/images/4.png" width="550">
