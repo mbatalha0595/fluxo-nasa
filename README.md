@@ -20,7 +20,7 @@ Em seguida, duas variáveis são inicializadas:
 
 <img src="https://raw.githubusercontent.com/mbatalha0595/fluxo-nasa/main/images/1.png" width=700>
 
-### 2) Consumo da API
+### 2) Baixar e Enviar Imagem
 
 No escopo Try, é realizada uma requisição HTTP (GET) para a API da NASA passando o valor das variáveis Chave e Data.
 
