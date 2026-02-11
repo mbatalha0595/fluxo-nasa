@@ -20,7 +20,7 @@ Em seguida, duas variáveis são inicializadas:
 
 <img src="https://raw.githubusercontent.com/mbatalha0595/fluxo-nasa/main/images/1.png" width=700>
 
-### 2) Baixar e Enviar Imagem
+### 2) Requisição de Dados (API)
 
 No escopo Try, é realizada uma requisição HTTP (GET) para a API da NASA passando o valor das variáveis Chave e Data.
 
@@ -30,8 +30,20 @@ Em seguida, a resposta JSON é processada para extrair a URL da imagem, seguida 
 
 <img src="https://raw.githubusercontent.com/mbatalha0595/fluxo-nasa/main/images/2.png" width=700>
 
-### 3) Envio de E-mail e Gravação no SharePoint
+### 3) Envio da Imagem por E-mail e Gravação no SharePoint
 
 Envio automático de e-mail com a imagem e armazenamento na biblioteca do SharePoint.
+
+<img src="https://raw.githubusercontent.com/mbatalha0595/fluxo-nasa/main/images/3.png" width=700>
+
+### 4) Notificação de Erro
+
+Em caso de erro no escopo Try, esse escopo é executado, enviando um email de notificação automaticamente.
+
+<img src="https://raw.githubusercontent.com/mbatalha0595/fluxo-nasa/main/images/3.png" width=700>
+
+### 5) Email com Imagem
+
+Este é o email enviado com a imagem baixada da NASA via API REST.
 
 <img src="https://raw.githubusercontent.com/mbatalha0595/fluxo-nasa/main/images/3.png" width=700>
